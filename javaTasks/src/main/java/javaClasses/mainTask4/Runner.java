@@ -16,6 +16,7 @@ class Runner {
         DataArray dataArray = new DataArray();
         CheckingGrades checkingGrades = new CheckingGrades();
         int passingScore = 9;
+        int bestAbiturientsNumber=3;
         dataArray.abiturient[0] = new Abiturient(1, "firstName1", "middleName1", "lastName1", "address1", 1111111, 5, 3, 2);
         dataArray.abiturient[1] = new Abiturient(2, "firstName2", "middleName2", "lastName2", "address2", 2222222, 4, 4, 4);
         dataArray.abiturient[2] = new Abiturient(3, "firstName3", "middleName3", "lastName3", "address3", 3333333, 2, 2, 3);
@@ -27,6 +28,8 @@ class Runner {
         System.out.println("Abiturients with bad grades:");
         checkingGrades.findBadAbiturients(dataArray.abiturient);
         System.out.println("Abiturients with total grade more than passing score:");
-        checkingGrades.findGoodAbiturient(dataArray.abiturient, passingScore);
+        checkingGrades.findAbiturientWithPassingScore(dataArray.abiturient, passingScore);
+        System.out.println("The best abiturients:");
+        checkingGrades.findBestAbiturients(dataArray.abiturient,bestAbiturientsNumber);
     }
 }

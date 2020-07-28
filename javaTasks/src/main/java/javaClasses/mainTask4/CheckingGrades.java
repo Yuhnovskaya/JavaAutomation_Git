@@ -14,7 +14,7 @@ class CheckingGrades {
     }
 
     public
-    void findGoodAbiturient(Abiturient[] abiturients, int passingScore) {
+    void findAbiturientWithPassingScore(Abiturient[] abiturients, int passingScore) {
         for (int i = 0; i < abiturients.length; i++) {
             if (abiturients[i].getGrades().getGrade1() +
                     abiturients[i].getGrades().getGrade2() +
@@ -25,9 +25,8 @@ class CheckingGrades {
     }
 
     public
-    void findBestAbiturients(Abiturient[] abiturients, int num) {
+    void findBestAbiturients(Abiturient[] abiturients, int abiturientsNumber) {
         Abiturient max = abiturients[0];
-
         for (int i = 0; i < abiturients.length; i++) {
             for (int j = i + 1; j < abiturients.length; j++) {
                 int sumI = abiturients[i].getGrades().getGrade1() +
@@ -43,7 +42,7 @@ class CheckingGrades {
                 }
             }
         }
-        for (int i = 0; i < num; i++) {
+        for (int i = 0; i < abiturientsNumber; i++) {
             System.out.println(abiturients[i]);
         }
     }
