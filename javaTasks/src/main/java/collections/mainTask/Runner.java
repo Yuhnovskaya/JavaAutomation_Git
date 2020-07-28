@@ -1,14 +1,12 @@
 package collections.mainTask;
 
-
 import collections.mainTask.accessories.Paper;
 import collections.mainTask.accessories.PaperType;
 import collections.mainTask.flowers.Flower;
 import collections.mainTask.flowers.characteristic.Color;
-import collections.mainTask.flowers.types.Lily;
-import javaCollections.mainTask.flowers.*;
 import collections.mainTask.flowers.characteristic.Freshness;
 import collections.mainTask.flowers.types.Chrysanthemum;
+import collections.mainTask.flowers.types.Lily;
 import collections.mainTask.flowers.types.Rose;
 
 import java.util.Arrays;
