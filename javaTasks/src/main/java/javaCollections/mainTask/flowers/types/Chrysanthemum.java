@@ -24,6 +24,7 @@ class Chrysanthemum extends Flower {
     double getPrice() {
         return chrysanthemumPrice;
     }
+
     @Override
     public
     String toString() {

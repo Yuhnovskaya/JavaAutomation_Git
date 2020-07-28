@@ -3,7 +3,8 @@ package javaCollections.optionalTask;
 import java.util.*;
 
 //2.   Ввести число, занести его цифры в стек. Вывести число, у которого цифры идут в обратном порядке.
-public class Task2 {
+public
+class Task2 {
     public static
     void main(String[] args) {
         System.out.println("Enter number:");

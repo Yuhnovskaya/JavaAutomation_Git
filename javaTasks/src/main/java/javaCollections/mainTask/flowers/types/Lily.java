@@ -4,15 +4,17 @@ import javaCollections.mainTask.flowers.Flower;
 import javaCollections.mainTask.flowers.characteristic.Color;
 import javaCollections.mainTask.flowers.characteristic.Freshness;
 
-public class Lily extends Flower {
-    private static final String lilyName="LILY";
-    private static final double lilyPrice=10;
+public
+class Lily extends Flower {
+    private static final String lilyName = "LILY";
+    private static final double lilyPrice = 10;
 
     public
     Lily(Color color, int stalkLength, Freshness freshness) {
         super(color, stalkLength, freshness);
     }
-@Override
+
+    @Override
     public
     String getName() {
         return lilyName;
@@ -23,6 +25,7 @@ public class Lily extends Flower {
     double getPrice() {
         return lilyPrice;
     }
+
     @Override
     public
     String toString() {

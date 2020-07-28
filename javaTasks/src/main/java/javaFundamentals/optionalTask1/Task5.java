@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 // Ввести n чисел с консоли. Найти количество чисел, содержащих только четные цифры,
 // а среди оставшихся — количество чисел с равным числом четных и нечетных цифр.
-public class Task5 {
-    public static void main(String[] args) {
+public
+class Task5 {
+    public static
+    void main(String[] args) {
         int n = 6;
         System.out.println("Enter " + n + " numbers:");
         Scanner scanner = new Scanner(System.in);

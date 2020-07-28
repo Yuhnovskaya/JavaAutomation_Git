@@ -1,7 +1,9 @@
 package javaClasses.mainTask4;
 
-public class CheckingGrades {
-    public void findBadAbiturients(Abiturient[] abiturient) {
+public
+class CheckingGrades {
+    public
+    void findBadAbiturients(Abiturient[] abiturient) {
         for (int i = 0; i < abiturient.length; i++) {
             if (abiturient[i].getGrades().getGrade1() < 3 |
                     abiturient[i].getGrades().getGrade2() < 3 |
@@ -11,7 +13,8 @@ public class CheckingGrades {
         }
     }
 
-    public void findGoodAbiturient(Abiturient[] abiturients, int passingScore) {
+    public
+    void findGoodAbiturient(Abiturient[] abiturients, int passingScore) {
         for (int i = 0; i < abiturients.length; i++) {
             if (abiturients[i].getGrades().getGrade1() +
                     abiturients[i].getGrades().getGrade2() +
@@ -21,7 +24,8 @@ public class CheckingGrades {
         }
     }
 
-    public void findBestAbiturients(Abiturient[] abiturients, int num) {
+    public
+    void findBestAbiturients(Abiturient[] abiturients, int num) {
         Abiturient max = abiturients[0];
 
         for (int i = 0; i < abiturients.length; i++) {

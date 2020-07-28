@@ -9,8 +9,10 @@ package javaClasses.mainTask4;
 // Определить дополнительно методы в классе, создающем массив объектов.
 // Задать критерий выбора данных и вывести эти данные на консоль.
 // В каждом классе, обладающем информацией, должно быть объявлено несколько конструкторов.
-public class Runner {
-    public static void main(String[] args) {
+public
+class Runner {
+    public static
+    void main(String[] args) {
         DataArray dataArray = new DataArray();
         CheckingGrades checkingGrades = new CheckingGrades();
         int passingScore = 9;

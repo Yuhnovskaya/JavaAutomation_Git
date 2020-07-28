@@ -7,13 +7,14 @@ import javaCollections.mainTask.flowers.characteristic.Freshness;
 public
 class Rose extends Flower {
     private static final String roseName = "ROSE";
-    private static final double rosePrice=3.5;
+    private static final double rosePrice = 3.5;
 
     public
     Rose(Color color, int stalkLength, Freshness freshness) {
         super(color, stalkLength, freshness);
     }
-@Override
+
+    @Override
     public
     String getName() {
         return roseName;
@@ -24,6 +25,7 @@ class Rose extends Flower {
     double getPrice() {
         return rosePrice;
     }
+
     @Override
     public
     String toString() {

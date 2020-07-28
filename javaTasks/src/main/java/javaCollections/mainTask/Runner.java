@@ -1,7 +1,6 @@
 package javaCollections.mainTask;
 
 
-
 import javaCollections.mainTask.accessories.Paper;
 import javaCollections.mainTask.accessories.PaperType;
 import javaCollections.mainTask.flowers.*;
