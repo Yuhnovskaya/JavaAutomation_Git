@@ -1,6 +1,6 @@
 package javaClasses.mainTask4;
 
-public class CheckGrades {
+public class CheckingGrades {
     public void findBadAbiturients(Abiturient[] abiturient) {
         for (int i = 0; i < abiturient.length; i++) {
             if (abiturient[i].getGrades().getGrade1() < 3 |

@@ -3,6 +3,7 @@ package javaCollections.optionalTask;
 import java.lang.reflect.Array;
 import java.util.*;
 
+
 //4.   Занести стихотворение в список. Провести сортировку по возрастанию длин строк.
 public class Task4 {
     private static final String POEM=

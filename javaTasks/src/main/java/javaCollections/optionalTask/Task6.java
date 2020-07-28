@@ -19,7 +19,7 @@ public class Task6 {
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
         try {
-            File file = new File("C:\\Users\\Nata\\Documents\\EPAM_Automation\\Java_Fundamention\\Tasks\\src\\main\\resources\\text");
+            File file = new File("javaTasks/src/main/resources/text");
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line = bufferedReader.readLine();

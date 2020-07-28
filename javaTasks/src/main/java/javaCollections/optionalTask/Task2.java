@@ -6,6 +6,7 @@ import java.util.*;
 public class Task2 {
     public static
     void main(String[] args) {
+        System.out.println("Enter number:");
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
         char[] numberArray = Integer.toString(number).toCharArray();

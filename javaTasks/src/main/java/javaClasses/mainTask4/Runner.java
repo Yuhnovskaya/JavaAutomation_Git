@@ -12,7 +12,7 @@ package javaClasses.mainTask4;
 public class Runner {
     public static void main(String[] args) {
         DataArray dataArray = new DataArray();
-        CheckGrades checkGrades = new CheckGrades();
+        CheckingGrades checkingGrades = new CheckingGrades();
         int passingScore = 9;
         dataArray.abiturient[0] = new Abiturient(1, "firstName1", "middleName1", "lastName1", "address1", 1111111, 5, 3, 2);
         dataArray.abiturient[1] = new Abiturient(2, "firstName2", "middleName2", "lastName2", "address2", 2222222, 4, 4, 4);
@@ -23,8 +23,8 @@ public class Runner {
             System.out.println(dataArray.abiturient[i]);
         }
         System.out.println("Abiturients with bad grades:");
-        checkGrades.findBadAbiturients(dataArray.abiturient);
+        checkingGrades.findBadAbiturients(dataArray.abiturient);
         System.out.println("Abiturients with total grade more than passing score:");
-        checkGrades.findGoodAbiturient(dataArray.abiturient, passingScore);
+        checkingGrades.findGoodAbiturient(dataArray.abiturient, passingScore);
     }
 }
