@@ -29,20 +29,20 @@ class Bouquet {
     public
     double getPrice() {
         double flowersPrice = 0;
-        for (Flower flower : this.flowers) {
+        for (Flower flower : flowers) {
             flowersPrice += flower.getPrice();
         }
-        return flowersPrice + this.paper.getPrice();
+        return flowersPrice + paper.getPrice();
     }
 
     public
     List<Flower> getFlowerInStalkLengthsRange(int minStalkLength, int maxStalkLength) {
-        List<Flower> flowers = new ArrayList<>();
-        for (Flower flower : this.flowers) {
+        List<Flower> flowersList = new ArrayList<>();
+        for (Flower flower : flowers) {
             if (flower.getStalkLength() >= minStalkLength & flower.getStalkLength() <= maxStalkLength) {
-                flowers.add(flower);
+                flowersList.add(flower);
             }
         }
-        return flowers;
+        return flowersList;
     }
 }
