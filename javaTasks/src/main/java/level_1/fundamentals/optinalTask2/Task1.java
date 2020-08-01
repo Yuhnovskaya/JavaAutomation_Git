@@ -75,6 +75,4 @@ class Task1 {
             array[r][second] = temp;
         }
     }
-
-  //  int mas7[][] = new int[4][];
 }
