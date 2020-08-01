@@ -76,5 +76,5 @@ class Task1 {
         }
     }
 
-    int mas7[][] = new int[4][];
+  //  int mas7[][] = new int[4][];
 }
