@@ -1,0 +1,12 @@
+The phrase regular expressions, also called regexes, is often used to mean the specific, standard textual
+ syntax for representing patterns for matching text, as distinct from the mathematical notation described
+ below. Each character in a regular expression (that is, each character in the string describing its pattern)
+is either a metacharacter, having a special meaning, or a regular character that has a literal meaning.
+For example, in the regex a., a is a literal character which matches just 'a', while '.' is a metacharacter
+that matches every character except a newline. Therefore, this regex matches, for example,
+'a ', or 'ax', or 'a0'. Together, metacharacters and literal characters can be used to identify
+text of a given pattern, or process a number of instances of it. Pattern matches may vary from a precise
+ equality to a very general similarity, as controlled by the metacharacters.
+The metacharacter syntax is designed specifically to represent prescribed
+  targets in a concise and flexible way to direct the automation of text processing of a variety of input
+  data, in a form easy to type using a standard ASCII keyboard.
