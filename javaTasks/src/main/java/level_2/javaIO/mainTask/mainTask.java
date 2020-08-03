@@ -40,7 +40,7 @@ class mainTask {
         }
         System.out.println("Number of folders: " + foldersNumber);
         System.out.println("Number of files: " + filesNumber);
-        System.out.println("Averade number of files in folder: " + filesNumber / foldersNumber);
-        System.out.println("Average length of file's name: " + totalFilesNameLength / filesNumber);
+        System.out.println("Averade number of files in folder: " + Math.round(filesNumber / foldersNumber));
+        System.out.println("Average length of file's name: " + Math.round(totalFilesNameLength / filesNumber));
     }
 }
