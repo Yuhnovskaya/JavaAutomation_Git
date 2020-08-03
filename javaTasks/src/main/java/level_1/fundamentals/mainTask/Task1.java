@@ -11,5 +11,6 @@ class Task1 {
         Scanner scanner = new Scanner(System.in);
         String username = scanner.nextLine();
         System.out.println("Message: \"Hellow," + username + "!\"");
+        scanner.close();
     }
 }

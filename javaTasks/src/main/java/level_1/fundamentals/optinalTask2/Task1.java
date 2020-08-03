@@ -22,6 +22,7 @@ class Task1 {
                 array[i][j] = -M + (int) (Math.random() * (2 * M + 1));
             }
         }
+        scanner.close();
         System.out.println("Random array:");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {

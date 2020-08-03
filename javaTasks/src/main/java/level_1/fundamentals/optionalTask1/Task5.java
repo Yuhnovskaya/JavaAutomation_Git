@@ -33,5 +33,6 @@ class Task5 {
         }
         System.out.println("the number of numbers that consists only of even numbers: " + numEven);
         System.out.println("the number of numbers that consists of equal number of even and odd numbers: " + numEvenOdd);
+        scanner.close();
     }
 }

@@ -21,9 +21,7 @@ class Task6 {
     public static
     void main(String[] args) {
         List<String> list = new ArrayList<>();
-        try {
-            File file = new File("javaTasks/src/main/resources/text");
-            FileReader fileReader = new FileReader(file);
+        try (FileReader fileReader = new FileReader("src\\main\\resources\\text");){
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line = bufferedReader.readLine();
             while (line != null) {

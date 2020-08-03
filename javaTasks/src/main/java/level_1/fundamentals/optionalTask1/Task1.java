@@ -34,5 +34,6 @@ class Task1 {
                 System.out.println("Min length: " + Integer.toString(array[i]).length());
             }
         }
+        scanner.close();
     }
 }
