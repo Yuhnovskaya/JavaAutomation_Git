@@ -15,7 +15,7 @@ PlanesQueue extends Thread {
     @Override
     public
     void run() {
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < planesNumber.length; i++) {
             System.out.println(String.format("самолет %s вышел на взлетную полосу %s", planesNumber[i], runwayNumber));
             try {
                 Thread.sleep(1000);
