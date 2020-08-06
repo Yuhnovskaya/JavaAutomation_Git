@@ -6,8 +6,8 @@ import level_1.collections.mainTask.flowers.characteristic.Freshness;
 
 public
 class Chrysanthemum extends Flower {
-    private static final String chrysanthemumName = "CHRYSANTEMUM";
-    private static final double chrysanthemumPrice = 5;
+    private static final String CHRYSANTEMUM_NAME = "CHRYSANTEMUM";
+    private static final double CHRYSANTEMUM_PRICE = 5;
 
     public
     Chrysanthemum(Color color, int stalkLength, Freshness freshness) {
@@ -17,23 +17,23 @@ class Chrysanthemum extends Flower {
     @Override
     public
     String getName() {
-        return chrysanthemumName;
+        return CHRYSANTEMUM_NAME;
     }
 
     public
     double getPrice() {
-        return chrysanthemumPrice;
+        return CHRYSANTEMUM_PRICE;
     }
 
     @Override
     public
     String toString() {
         return "Flower{" +
-                "name='" + chrysanthemumName + '\'' +
+                "name='" + CHRYSANTEMUM_NAME + '\'' +
                 ", color=" + getColor().toString() +
                 ", stalkLength=" + getStalkLength() +
                 ", freshness=" + getFreshness() +
-                ", price=" + chrysanthemumPrice +
+                ", price=" + CHRYSANTEMUM_PRICE +
                 "}\n";
     }
 }

@@ -6,8 +6,8 @@ import level_1.collections.mainTask.flowers.characteristic.Freshness;
 
 public
 class Rose extends Flower {
-    private static final String roseName = "ROSE";
-    private static final double rosePrice = 3.5;
+    private static final String ROSE_NAME = "ROSE";
+    private static final double ROSE_PRICE = 3.5;
 
     public
     Rose(Color color, int stalkLength, Freshness freshness) {
@@ -17,24 +17,24 @@ class Rose extends Flower {
     @Override
     public
     String getName() {
-        return roseName;
+        return ROSE_NAME;
     }
 
     @Override
     public
     double getPrice() {
-        return rosePrice;
+        return ROSE_PRICE;
     }
 
     @Override
     public
     String toString() {
         return "Flower{" +
-                "name='" + roseName + '\'' +
+                "name='" + ROSE_NAME + '\'' +
                 ", color=" + getColor().toString() +
                 ", stalkLength=" + getStalkLength() +
                 ", freshness=" + getFreshness() +
-                ", price=" + rosePrice +
+                ", price=" + ROSE_PRICE +
                 "}\n";
     }
 }
