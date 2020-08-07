@@ -16,44 +16,42 @@ class CarsQueue extends Thread {
     @Override
     public
     void run() {
-        int num = 0;
-        for (int i = 0; i < parkingPlaceList.size(); i++) {
-            if (parkingPlaceList.get(i).getStatus() == ParkingPlaceAvailability.AVAILABLE) {
-                takeStayLeavePlace(parkingPlaceList.get(i));
-                num += 1;
-                break;
-            }
-        }
-        if (num == 0) {
+        int freePlace=checkTakeLeavePlace(this.parkingPlaceList);
+        if (freePlace == 0) {
             try {
                 System.out.println(String.format("The car %s is waiting for the place", car.getCarNumber()));
                 Thread.sleep(car.getWaitingTime());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            for (int i = 0; i < parkingPlaceList.size(); i++) {
-                if (parkingPlaceList.get(i).getStatus() == ParkingPlaceAvailability.AVAILABLE) {
-                    takeStayLeavePlace(parkingPlaceList.get(i));
-                    break;
-                } else {
+            freePlace=checkTakeLeavePlace(this.parkingPlaceList);
+            if(freePlace==0) {
                     System.out.println(String.format("The car %s left parking", car.getCarNumber()));
-                    break;
+                //    break;
                 }
             }
         }
-    }
 
     public
-    void takeStayLeavePlace(ParkingPlace parkingPlace) {
-        System.out.println(String.format("The car %s is taking up parking place %s", car.getCarNumber(), parkingPlace.getParkingPlaceNumber()));
-        parkingPlace.setStatus(ParkingPlaceAvailability.UNAVAILABLE);
-        try {
-            Thread.sleep(car.getParkingTime());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+    int checkTakeLeavePlace(List<ParkingPlace> parkingPlaceList) {
+        int freePlace = 0;
+        for (int i = 0; i < parkingPlaceList.size(); i++) {
+            if (parkingPlaceList.get(i).getStatus() == ParkingPlaceAvailability.AVAILABLE) {
+                System.out.println(String.format("The car %s is taking up parking place %s", car.getCarNumber(), parkingPlaceList.get(i).getParkingPlaceNumber()));
+                parkingPlaceList.get(i).setStatus(ParkingPlaceAvailability.UNAVAILABLE);
+                try {
+                    Thread.sleep(car.getParkingTime());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(String.format("The car %s is leaving parking place %s\nThe parking place %s is available", car.getCarNumber(), parkingPlaceList.get(i).getParkingPlaceNumber(), parkingPlaceList.get(i).getParkingPlaceNumber()));
+                parkingPlaceList.get(i).setStatus(ParkingPlaceAvailability.AVAILABLE);
+                freePlace += 1;
+                break;
+            }
         }
-        System.out.println(String.format("The car %s is leaving parking place %s\nThe parking place %s is available", car.getCarNumber(), parkingPlace.getParkingPlaceNumber(), parkingPlace.getParkingPlaceNumber()));
-        parkingPlace.setStatus(ParkingPlaceAvailability.AVAILABLE);
+        return freePlace;
     }
 }
+
 
