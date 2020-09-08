@@ -9,10 +9,10 @@ import java.util.List;
 public
 class Groups {
     private String groupNumber;
-    private List<Students> studentsList;
+    private List<Student> studentsList;
 
     public
-    Groups(String groupNumber, List<Students> studentsList) {
+    Groups(String groupNumber, List<Student> studentsList) {
         this.groupNumber = groupNumber;
         this.studentsList = studentsList;
     }
@@ -23,7 +23,7 @@ class Groups {
     }
 
     public
-    List<Students> getStudentsList() throws NoStudentInGroupException {
+    List<Student> getStudentsList() throws NoStudentInGroupException {
         if (studentsList.isEmpty()) {
             throw new NoStudentInGroupException(String.format("There are no students in group %s", groupNumber));
         } else

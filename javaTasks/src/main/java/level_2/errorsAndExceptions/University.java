@@ -35,7 +35,7 @@ class University {
         int gradesNumber = 0;
         for (Faculties faculties : this.getFacultiesList()) {
             for (Groups groups : faculties.getGroupsList()) {
-                for (Students students : groups.getStudentsList()) {
+                for (Student students : groups.getStudentsList()) {
                     if (students.getId() == studentID) {
                         for (Grades grades : students.getGradesList()) {
                             gradesSum += grades.getGrade();
@@ -45,18 +45,19 @@ class University {
                 }
             }
         }
-        return Math.round(gradesSum / gradesNumber * Math.pow(10, 2)) / Math.pow(10, 2);
+        return Math.round(gradesSum / gradesNumber * 100) / 100;
     }
 
     public
     double getAverageGroupSubjectGrade(String facultiesName, String groupNumber, Subjects subject) throws NoSubjectException, NoStudentInGroupException, NoGroupsInFacultyExeption, NoFacultiesInUniversityExeption, GradeOutOfBordersException {
         double gradesSum = 0;
         int gradesNumber = 0;
+        double averageGrade;
         for (Faculties faculties : this.getFacultiesList())
             if (faculties.getFacultyName() == facultiesName) {
                 for (Groups groups : faculties.getGroupsList()) {
                     if (groups.getGroupNumber() == groupNumber) {
-                        for (Students students : groups.getStudentsList()) {
+                        for (Student students : groups.getStudentsList()) {
                             for (Grades grades : students.getGradesList()) {
                                 if (grades.getSubject() == subject) {
                                     gradesSum += grades.getGrade();
@@ -67,7 +68,10 @@ class University {
                     }
                 }
             }
-        return Math.round(gradesSum / gradesNumber * Math.pow(10, 2)) / Math.pow(10, 2);
+        if (gradesNumber == 0) {
+            System.out.println(String.format("Students of the group %s don't study %s", groupNumber, subject));
+        }
+        return Math.round(gradesSum / gradesNumber * 100) / 100;
     }
 
     public
@@ -76,7 +80,7 @@ class University {
         int gradesNumber = 0;
         for (Faculties faculties : this.getFacultiesList()) {
             for (Groups groups : faculties.getGroupsList()) {
-                for (Students student : groups.getStudentsList()) {
+                for (Student student : groups.getStudentsList()) {
                     for (Grades grades : student.getGradesList()) {
                         if (grades.getSubject() == subject) {
                             gradesSum += grades.getGrade();
@@ -86,7 +90,7 @@ class University {
                 }
             }
         }
-        return Math.round(gradesSum / gradesNumber * Math.pow(10, 2)) / Math.pow(10, 2);
+        return Math.round(gradesSum / gradesNumber * 100) / 100;
     }
 
     @Override
