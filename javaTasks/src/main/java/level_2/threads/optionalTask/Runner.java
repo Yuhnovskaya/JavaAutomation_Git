@@ -8,7 +8,6 @@ public
 class Runner {
     public static
     void main(String[] args) throws InterruptedException {
-        Semaphore SEMAPHORE = new Semaphore(5);
         int[] planeID = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         List<Runway> runwayList = Arrays.asList(
                 new Runway(1, RunwayAvailability.AVAILABLE),
@@ -17,34 +16,35 @@ class Runner {
                 new Runway(4, RunwayAvailability.AVAILABLE),
                 new Runway(5, RunwayAvailability.AVAILABLE)
         );
-        PlaneQueue planesPlaneQueue_1 = new PlaneQueue(SEMAPHORE, planeID[0], runwayList);
-        PlaneQueue planesPlaneQueue_2 = new PlaneQueue(SEMAPHORE, planeID[1], runwayList);
-        PlaneQueue planesPlaneQueue_3 = new PlaneQueue(SEMAPHORE, planeID[2], runwayList);
-        PlaneQueue planesPlaneQueue_4 = new PlaneQueue(SEMAPHORE, planeID[3], runwayList);
-        PlaneQueue planesPlaneQueue_5 = new PlaneQueue(SEMAPHORE, planeID[4], runwayList);
-        PlaneQueue planesPlaneQueue_6 = new PlaneQueue(SEMAPHORE, planeID[5], runwayList);
-        PlaneQueue planesPlaneQueue_7 = new PlaneQueue(SEMAPHORE, planeID[6], runwayList);
-        PlaneQueue planesPlaneQueue_8 = new PlaneQueue(SEMAPHORE, planeID[7], runwayList);
-        PlaneQueue planesPlaneQueue_9 = new PlaneQueue(SEMAPHORE, planeID[8], runwayList);
-        PlaneQueue planesPlaneQueue_10 = new PlaneQueue(SEMAPHORE, planeID[9], runwayList);
-        planesPlaneQueue_1.start();
+        Semaphore SEMAPHORE = new Semaphore(runwayList.size());
+        PlanesQueue planesPlanesQueue_1 = new PlanesQueue(SEMAPHORE, planeID[0], runwayList);
+        PlanesQueue planesPlanesQueue_2 = new PlanesQueue(SEMAPHORE, planeID[1], runwayList);
+        PlanesQueue planesPlanesQueue_3 = new PlanesQueue(SEMAPHORE, planeID[2], runwayList);
+        PlanesQueue planesPlanesQueue_4 = new PlanesQueue(SEMAPHORE, planeID[3], runwayList);
+        PlanesQueue planesPlanesQueue_5 = new PlanesQueue(SEMAPHORE, planeID[4], runwayList);
+        PlanesQueue planesPlanesQueue_6 = new PlanesQueue(SEMAPHORE, planeID[5], runwayList);
+        PlanesQueue planesPlanesQueue_7 = new PlanesQueue(SEMAPHORE, planeID[6], runwayList);
+        PlanesQueue planesPlanesQueue_8 = new PlanesQueue(SEMAPHORE, planeID[7], runwayList);
+        PlanesQueue planesPlanesQueue_9 = new PlanesQueue(SEMAPHORE, planeID[8], runwayList);
+        PlanesQueue planesPlanesQueue_10 = new PlanesQueue(SEMAPHORE, planeID[9], runwayList);
+        planesPlanesQueue_1.start();
         //Thread.sleep(500);
-        planesPlaneQueue_2.start();
+        planesPlanesQueue_2.start();
         //Thread.sleep(500);
-        planesPlaneQueue_3.start();
+        planesPlanesQueue_3.start();
         //Thread.sleep(500);
-        planesPlaneQueue_4.start();
+        planesPlanesQueue_4.start();
         //Thread.sleep(500);
-        planesPlaneQueue_5.start();
+        planesPlanesQueue_5.start();
         //Thread.sleep(500);
-        planesPlaneQueue_6.start();
+        planesPlanesQueue_6.start();
         //Thread.sleep(500);
-        planesPlaneQueue_7.start();
+        planesPlanesQueue_7.start();
         //Thread.sleep(500);
-        planesPlaneQueue_8.start();
+        planesPlanesQueue_8.start();
         //Thread.sleep(500);
-        planesPlaneQueue_9.start();
+        planesPlanesQueue_9.start();
         //Thread.sleep(500);
-        planesPlaneQueue_10.start();
+        planesPlanesQueue_10.start();
     }
 }

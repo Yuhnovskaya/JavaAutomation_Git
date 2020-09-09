@@ -1,14 +1,18 @@
 package level_2.threads.mainTask;
 
 import java.util.List;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 
 public
 class CarsQueue extends Thread {
+    Semaphore SEMAPHORE;
     private List<ParkingPlace> parkingPlaceList;
     private Car car;
 
     public
-    CarsQueue(List<ParkingPlace> parkingPlaceList, Car car) {
+    CarsQueue(Semaphore SEMAPHORE, List<ParkingPlace> parkingPlaceList, Car car) {
+        this.SEMAPHORE = SEMAPHORE;
         this.parkingPlaceList = parkingPlaceList;
         this.car = car;
     }
@@ -16,42 +20,29 @@ class CarsQueue extends Thread {
     @Override
     public
     void run() {
-        int freePlace=checkTakeLeavePlace(this.parkingPlaceList);
-        if (freePlace == 0) {
-            try {
-                System.out.println(String.format("The car %s is waiting for the place", car.getCarNumber()));
-                Thread.sleep(car.getWaitingTime());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            freePlace=checkTakeLeavePlace(this.parkingPlaceList);
-            if(freePlace==0) {
-                    System.out.println(String.format("The car %s left parking", car.getCarNumber()));
-                //    break;
+        System.out.println(String.format("The car %s is arriving the parking", car.getCarNumber()));
+        int counter = -1;
+        try {
+            if (SEMAPHORE.tryAcquire(car.getWaitingTime(), TimeUnit.MILLISECONDS)) {
+                for (int i = 0; i < parkingPlaceList.size(); i++) {
+                    synchronized (parkingPlaceList) {
+                        if (parkingPlaceList.get(i).getStatus() == ParkingPlaceAvailability.AVAILABLE) {
+                            parkingPlaceList.get(i).setStatus(ParkingPlaceAvailability.UNAVAILABLE);
+                            counter = i;
+                            System.out.println(String.format("The car %s is taking up parking place %s", car.getCarNumber(), parkingPlaceList.get(i).getParkingPlaceNumber()));
+                            break;
+                        }
+                    }
                 }
+                Thread.sleep(car.getParkingTime());
+                System.out.println(String.format("The car %s is leaving parking place %s\nThe parking place %s is available", car.getCarNumber(), parkingPlaceList.get(counter).getParkingPlaceNumber(), parkingPlaceList.get(counter).getParkingPlaceNumber()));
+                parkingPlaceList.get(counter).setStatus(ParkingPlaceAvailability.AVAILABLE);
+                SEMAPHORE.release();
+            } else {
+                System.out.println(String.format("The car %s left the parking", car.getCarNumber()));
             }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-
-    public
-    int checkTakeLeavePlace(List<ParkingPlace> parkingPlaceList) {
-        int freePlace = 0;
-        for (int i = 0; i < parkingPlaceList.size(); i++) {
-            if (parkingPlaceList.get(i).getStatus() == ParkingPlaceAvailability.AVAILABLE) {
-                System.out.println(String.format("The car %s is taking up parking place %s", car.getCarNumber(), parkingPlaceList.get(i).getParkingPlaceNumber()));
-                parkingPlaceList.get(i).setStatus(ParkingPlaceAvailability.UNAVAILABLE);
-                try {
-                    Thread.sleep(car.getParkingTime());
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println(String.format("The car %s is leaving parking place %s\nThe parking place %s is available", car.getCarNumber(), parkingPlaceList.get(i).getParkingPlaceNumber(), parkingPlaceList.get(i).getParkingPlaceNumber()));
-                parkingPlaceList.get(i).setStatus(ParkingPlaceAvailability.AVAILABLE);
-                freePlace += 1;
-                break;
-            }
-        }
-        return freePlace;
     }
 }
-
-
