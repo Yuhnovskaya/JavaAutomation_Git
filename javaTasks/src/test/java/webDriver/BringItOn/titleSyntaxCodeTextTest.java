@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 public
-class BringItOn {
+class titleSyntaxCodeTextTest {
     static WebDriver driver = new ChromeDriver();
     static PastebinPage pastebinPage = new PastebinPage(driver);
     static NewPastePage newPastePage = new NewPastePage(driver);
@@ -33,7 +33,7 @@ class BringItOn {
 
     @Test
     public
-    void verifyTitleTest() {
+    void verifyTitleTextTest() {
         Assert.assertTrue("The title is not correct", driver.getTitle().contains(title));
     }
 
@@ -45,7 +45,7 @@ class BringItOn {
 
     @Test
     public
-    void verifyCodeTest() {
+    void verifyCodeTextTest() {
         Assert.assertEquals("Code is not correct", code, newPastePage.pasteData.getText());
     }
 
