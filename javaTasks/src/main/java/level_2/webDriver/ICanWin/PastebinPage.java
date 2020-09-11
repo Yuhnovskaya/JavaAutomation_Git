@@ -1,4 +1,4 @@
-package level_2.webDriver.ICanWinAndBringItOn;
+package level_2.webDriver.ICanWin;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
