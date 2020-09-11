@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 public
-class titleSyntaxCodeTextTest {
+class TitleSyntaxCodeTextTest {
     static WebDriver driver = new ChromeDriver();
     static PastebinPage pastebinPage = new PastebinPage(driver);
     static NewPastePage newPastePage = new NewPastePage(driver);
