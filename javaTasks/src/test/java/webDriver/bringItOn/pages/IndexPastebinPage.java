@@ -1,4 +1,4 @@
-package webDriver.BringItOn;
+package webDriver.bringItOn.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public
-class PastebinPage {
+class IndexPastebinPage {
     WebDriver driver;
     @FindBy(id = "postform-text")
     public WebElement postForm;
@@ -24,7 +24,7 @@ class PastebinPage {
     public WebElement syntaxSearch;
 
     public
-    PastebinPage(WebDriver driver) {
+    IndexPastebinPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }

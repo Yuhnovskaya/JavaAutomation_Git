@@ -1,15 +1,17 @@
-package webDriver.BringItOn;
+package webDriver.bringItOn;
 
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import webDriver.bringItOn.pages.NewPastePage;
+import webDriver.bringItOn.pages.IndexPastebinPage;
 
 import java.util.concurrent.TimeUnit;
 
 public
 class TitleSyntaxCodeTextTest {
     static WebDriver driver = new ChromeDriver();
-    static PastebinPage pastebinPage = new PastebinPage(driver);
+    static IndexPastebinPage pastebinPage = new IndexPastebinPage(driver);
     static NewPastePage newPastePage = new NewPastePage(driver);
     static String code = "git config --global user.name  \"New Sheriff in Town\"\n" +
             "git reset $(git commit-tree HEAD^{tree} -m \"Legacy code\")\n" +
@@ -19,7 +21,7 @@ class TitleSyntaxCodeTextTest {
 
     @BeforeClass
     public static
-    void doBefore() throws InterruptedException {
+    void doBeforeTest() throws InterruptedException {
         driver.get("https://pastebin.com");
         pastebinPage.postForm.sendKeys(code);
         pastebinPage.syntaxHighlighting.click();
@@ -51,7 +53,7 @@ class TitleSyntaxCodeTextTest {
 
     @AfterClass
     public static
-    void doAfter() {
+    void doAfterTest() {
         driver.quit();
     }
 }
