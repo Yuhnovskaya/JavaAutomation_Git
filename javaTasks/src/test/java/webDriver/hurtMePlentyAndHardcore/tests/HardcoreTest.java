@@ -65,7 +65,7 @@ class HardcoreTest {
         String calculatorHandle = String.valueOf(handles.get(0));
         String tenminmailHandle = String.valueOf(handles.get(1));
         driver.switchTo().window(tenminmailHandle);
-        TimeUnit.SECONDS.sleep(3);
+        TimeUnit.SECONDS.sleep(10);
         tenMinuteMailPage.copyEmail.click();
         driver.switchTo().window(calculatorHandle);
         driver.switchTo().frame(calculatorPage.frame);
@@ -74,9 +74,9 @@ class HardcoreTest {
         estimatePage.emailField.sendKeys(Keys.CONTROL, "v");
         estimatePage.sendEmailButton.click();
         driver.switchTo().window(tenminmailHandle);
-        //TimeUnit.SECONDS.sleep(20);
-        WebDriverWait wait = new WebDriverWait(driver, 60);
-        wait.until(ExpectedConditions.elementToBeClickable(tenMinuteMailPage.mail));
+        TimeUnit.SECONDS.sleep(20);
+       /* WebDriverWait wait = new WebDriverWait(driver, 60);
+        wait.until(ExpectedConditions.visibilityOf(tenMinuteMailPage.mail));*/
         tenMinuteMailPage.mail.click();
         costInMail = tenMinuteMailPage.price.getText();
         System.out.println(totalCost);
