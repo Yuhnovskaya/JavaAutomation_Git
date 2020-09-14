@@ -74,9 +74,9 @@ class HardcoreTest {
         estimatePage.emailField.sendKeys(Keys.CONTROL, "v");
         estimatePage.sendEmailButton.click();
         driver.switchTo().window(tenminmailHandle);
-        TimeUnit.SECONDS.sleep(20);
-        /*WebDriverWait wait = new WebDriverWait(driver, 60);
-        wait.until(ExpectedConditions.elementToBeClickable(tenMinuteMailPage.mail));*/
+        //TimeUnit.SECONDS.sleep(20);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        wait.until(ExpectedConditions.elementToBeClickable(tenMinuteMailPage.mail));
         tenMinuteMailPage.mail.click();
         costInMail = tenMinuteMailPage.price.getText();
         System.out.println(totalCost);
