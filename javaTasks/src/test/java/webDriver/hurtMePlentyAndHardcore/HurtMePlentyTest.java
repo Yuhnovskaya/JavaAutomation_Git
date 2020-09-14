@@ -1,4 +1,4 @@
-package webDriver.hurtMePlenty;
+package webDriver.hurtMePlentyAndHardcore;
 
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -6,14 +6,14 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import webDriver.hurtMePlenty.pages.CalculatorPage;
-import webDriver.hurtMePlenty.pages.EstimatePage;
-import webDriver.hurtMePlenty.pages.GoogleCloudPage;
+import webDriver.hurtMePlentyAndHardcore.pages.CalculatorPage;
+import webDriver.hurtMePlentyAndHardcore.pages.EstimatePage;
+import webDriver.hurtMePlentyAndHardcore.pages.GoogleCloudPage;
 
 import java.util.concurrent.TimeUnit;
 
 public
-class CalculatorTest {
+class HurtMePlentyTest {
     static WebDriver driver = new ChromeDriver();
     EstimatePage estimatePage = new EstimatePage(driver);
 

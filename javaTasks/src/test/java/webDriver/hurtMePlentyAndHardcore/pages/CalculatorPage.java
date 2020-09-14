@@ -1,4 +1,4 @@
-package webDriver.hurtMePlenty.pages;
+package webDriver.hurtMePlentyAndHardcore.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,7 +28,7 @@ class CalculatorPage {
     public WebElement regularVMClass;
     @FindBy(id = "select_value_label_57")
     public WebElement instanceType;
-    @FindBy(id = "select_option_236")
+    @FindBy(xpath="//*[@id = \"select_option_236\"]/div[1]")
     public WebElement n1standard8;
     @FindBy(xpath = "//md-checkbox")
     public WebElement addGPUs;

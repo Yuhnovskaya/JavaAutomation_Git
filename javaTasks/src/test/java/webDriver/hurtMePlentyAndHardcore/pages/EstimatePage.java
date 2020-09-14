@@ -1,4 +1,4 @@
-package webDriver.hurtMePlenty.pages;
+package webDriver.hurtMePlentyAndHardcore.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,6 +20,12 @@ class EstimatePage {
     public WebElement commitmentTerm;
     @FindBy(xpath = "//b[@class=\"ng-binding\"]")
     public WebElement cost;
+    @FindBy(id="email_quote")  //(xpath = "//button[@aria-label=\"Email Estimate\"]")
+    public WebElement emailEstimate;
+    @FindBy(xpath = "//input[@ng-model=\"emailQuote.user.email\"]")
+    public WebElement emailField;
+    @FindBy(xpath = "//button[@aria-label=\"Send Email\"]")
+    public WebElement sendEmailButton;
 
     public
     EstimatePage(WebDriver driver) {
