@@ -16,8 +16,8 @@ import java.util.concurrent.TimeUnit;
 public
 class HardcoreTest {
     WebDriver driver;
-    String totalCost;
-    String costInMail;
+    String costInCalculator;
+    String costInEmail;
 
     @Before
     public
@@ -42,18 +42,19 @@ class HardcoreTest {
         calculatorPage.vmClass.click();
         calculatorPage.regularVMClass.click();
         calculatorPage.instanceType.click();
-        TimeUnit.MILLISECONDS.sleep(500);
+        TimeUnit.MILLISECONDS.sleep(100);
         calculatorPage.n1standard8.click();
         calculatorPage.addGPUs.click();
         calculatorPage.gpusNumber.click();
         calculatorPage.gpusNumber_1.click();
         calculatorPage.gpusType.click();
-        TimeUnit.MILLISECONDS.sleep(500);
+        TimeUnit.MILLISECONDS.sleep(100);
         calculatorPage.nvidiaTeslaV100.click();
         calculatorPage.localSSD.click();
+        TimeUnit.MILLISECONDS.sleep(100);
         calculatorPage.localSSD2x375.click();
         calculatorPage.location.click();
-        TimeUnit.MILLISECONDS.sleep(500);
+        TimeUnit.MILLISECONDS.sleep(100);
         calculatorPage.locationFrancfurt.click();
         calculatorPage.commitedUsage.click();
         calculatorPage.commitedUsase1Year.click();
@@ -65,34 +66,31 @@ class HardcoreTest {
         String calculatorHandle = String.valueOf(handles.get(0));
         String tenminmailHandle = String.valueOf(handles.get(1));
         driver.switchTo().window(tenminmailHandle);
-        TimeUnit.SECONDS.sleep(10);
+        TimeUnit.SECONDS.sleep(5);
         tenMinuteMailPage.copyEmail.click();
         driver.switchTo().window(calculatorHandle);
         driver.switchTo().frame(calculatorPage.frame);
         driver.switchTo().frame(calculatorPage.innerFrame);
-        totalCost = estimatePage.cost.getText();
+        costInCalculator = estimatePage.cost.getText();
         estimatePage.emailField.sendKeys(Keys.CONTROL, "v");
         estimatePage.sendEmailButton.click();
         driver.switchTo().window(tenminmailHandle);
-        TimeUnit.SECONDS.sleep(20);
-       /* WebDriverWait wait = new WebDriverWait(driver, 60);
+        TimeUnit.SECONDS.sleep(10);
+        /*WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.visibilityOf(tenMinuteMailPage.mail));*/
         tenMinuteMailPage.mail.click();
-        costInMail = tenMinuteMailPage.price.getText();
-        System.out.println(totalCost);
-        System.out.println(costInMail);
+        costInEmail= tenMinuteMailPage.price.getText();
     }
 
     @Test
     public
     void hardcoreTest() {
-        Assert.assertTrue("Costs aren't equal",totalCost.contains(costInMail));
+        Assert.assertTrue("The cost in the calculator and the email is the same",costInCalculator.contains(costInEmail));
     }
 
     @After
     public
     void doAfte() {
-        driver.close();
         driver.quit();
     }
 }

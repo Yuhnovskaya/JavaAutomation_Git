@@ -1,4 +1,4 @@
-package webDriver.hurtMePlentyAndHardcore;
+package webDriver.hurtMePlentyAndHardcore.tests;
 
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -19,7 +19,7 @@ class HurtMePlentyTest {
 
     @BeforeClass
     public static
-    void doBeforeTest() {
+    void doBeforeTest() throws InterruptedException {
         GoogleCloudPage googleCloudPage = new GoogleCloudPage(driver);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -37,15 +37,19 @@ class HurtMePlentyTest {
         calculatorPage.vmClass.click();
         calculatorPage.regularVMClass.click();
         calculatorPage.instanceType.click();
+        TimeUnit.MILLISECONDS.sleep(100);
         calculatorPage.n1standard8.click();
         calculatorPage.addGPUs.click();
         calculatorPage.gpusNumber.click();
         calculatorPage.gpusNumber_1.click();
         calculatorPage.gpusType.click();
+        TimeUnit.MILLISECONDS.sleep(100);
         calculatorPage.nvidiaTeslaV100.click();
         calculatorPage.localSSD.click();
+        TimeUnit.MILLISECONDS.sleep(100);
         calculatorPage.localSSD2x375.click();
         calculatorPage.location.click();
+        TimeUnit.MILLISECONDS.sleep(100);
         calculatorPage.locationFrancfurt.click();
         calculatorPage.commitedUsage.click();
         calculatorPage.commitedUsase1Year.click();
