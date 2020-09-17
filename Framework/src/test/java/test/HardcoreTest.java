@@ -59,7 +59,7 @@ class HardcoreTest extends CommonConditions {
         calculatorPage.pasteEmail();
         calculatorPage.sendEmail();
         driver.switchTo().window(mailHandle);
-        TimeUnit.SECONDS.sleep(15);
+        TimeUnit.SECONDS.sleep(25);
         /*WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.visibilityOf(tenMinuteMailPage.mail));*/
         tenMinuteMailPage.readEmail();
