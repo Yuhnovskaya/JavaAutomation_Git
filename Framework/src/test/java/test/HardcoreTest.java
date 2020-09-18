@@ -53,7 +53,8 @@ class HardcoreTest extends CommonConditions {
         String mailHandle = String.valueOf(handles.get(1));
         driver.switchTo().window(mailHandle);
         TimeUnit.SECONDS.sleep(30);
-        tenMinuteMailPage.getEmailAddress();
+        js.executeScript("arguments[0].click();", tenMinuteMailPage.copyEmail);
+        //tenMinuteMailPage.getEmailAddress();
         driver.switchTo().window(calculatorHandle);
         calculatorPage.swithToWorkingFrame();
         calculatorPage.pasteEmail();
