@@ -52,14 +52,14 @@ class HardcoreTest extends CommonConditions {
         String calculatorHandle = String.valueOf(handles.get(0));
         String mailHandle = String.valueOf(handles.get(1));
         driver.switchTo().window(mailHandle);
-        TimeUnit.SECONDS.sleep(5);
+        TimeUnit.SECONDS.sleep(15);
         tenMinuteMailPage.getEmailAddress();
         driver.switchTo().window(calculatorHandle);
         calculatorPage.swithToWorkingFrame();
         calculatorPage.pasteEmail();
         calculatorPage.sendEmail();
         driver.switchTo().window(mailHandle);
-        TimeUnit.SECONDS.sleep(40);
+        TimeUnit.SECONDS.sleep(30);
         /*WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.visibilityOf(tenMinuteMailPage.mail));*/
         tenMinuteMailPage.readEmail();
