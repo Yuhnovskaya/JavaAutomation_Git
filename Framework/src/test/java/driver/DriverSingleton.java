@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public
@@ -23,8 +24,11 @@ class DriverSingleton {
                     driver = new FirefoxDriver();
                 }
                 default: {
+
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--start-maximized");
+                    driver = new ChromeDriver(options);
                 }
             }
             driver.manage().window().setSize(new Dimension(1280,900));
