@@ -18,14 +18,6 @@ class TenMinuteMailPage extends AbstractPage {
     @FindBy(xpath = "//table[@class=\"quote\"]//tr[2]/td[2]/h3")
     public WebElement price;
 
-/*    @Override
-    protected
-    AbstractPage openPage() {
-        driver.navigate().to(PAGE_URL);
-        logger.info("Login page opened");
-        return this;
-    }*/
-
     @Override
     public
     AbstractPage openPage() {

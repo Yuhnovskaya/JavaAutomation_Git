@@ -2,8 +2,6 @@ package service;
 
 import model.Product;
 
-import java.util.Properties;
-
 public
 class ProductCreator {
     public static final String PATH_TO_TESTDATA = "src\\test\\resources\\dev.properties";
@@ -22,19 +20,6 @@ class ProductCreator {
 
     public static
     Product computerEngine() {
-    /*    Properties properties = PropertiesReader.getProperties(PATH_TO_TESTDATA);
-        return new Product(properties.getProperty(TESTDATA_PRODUCT_TYPE),
-                properties.getProperty(TESTDATA_INSTANCE_NUMBER),
-                properties.getProperty(TESTDATA_INSTANCE_FOR),
-                properties.getProperty(TESTDATA_OPERATION_SYSTEM),
-                properties.getProperty(TESTDATA_VM_CLASS),
-                properties.getProperty(TESTDATA_INSTANCE_TYPE),
-                Boolean.parseBoolean(properties.getProperty(TESTDATA_ADD_GPUS)),
-                properties.getProperty(TESTDATA_GPUS_NUMBER),
-                properties.getProperty(TESTDATA_GPUS_TYPE),
-                properties.getProperty(TESTDATA_LOCAL_SSD),
-                properties.getProperty(TESTDATA_LOCATION),
-                properties.getProperty(TESTDATA_COMMITTED_USAGE));*/
         return new model.Product(service.TestDataReader.getTestData(TESTDATA_PRODUCT_TYPE),
                 service.TestDataReader.getTestData(TESTDATA_INSTANCE_NUMBER),
                 service.TestDataReader.getTestData(TESTDATA_INSTANCE_FOR),

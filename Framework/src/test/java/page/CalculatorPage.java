@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public
 class CalculatorPage extends AbstractPage {
-    private final Logger logger = LogManager.getRootLogger();
+    //private final Logger logger = LogManager.getRootLogger();
     private final String PRODUCT = "//*[@class=\"md-paginated\"]//*[@title=\"%s\"]";
     private final String OPERATION_SYSTEM = "//*[@id=\"select_container_74\"]//*[contains(text(),\"%s\")]";
     private final String VM_CLASS = "//*[@id=\"select_container_78\"]//*[contains(text(),\"%s\")]";
@@ -54,7 +54,7 @@ class CalculatorPage extends AbstractPage {
     public WebElement addToEstimate;
     @FindBy(xpath = "//b[@class=\"ng-binding\"]")
     public WebElement cost;
-    @FindBy(id = "email_quote")  //(xpath = "//button[@aria-label=\"Email Estimate\"]")
+    @FindBy(id = "email_quote")
     public WebElement emailEstimate;
     @FindBy(xpath = "//input[@ng-model=\"emailQuote.user.email\"]")
     public WebElement emailField;
@@ -74,13 +74,13 @@ class CalculatorPage extends AbstractPage {
     }
 
     public
-    CalculatorPage fillOutInstancesNumber(int instancesNumber) {
+    CalculatorPage enterInstancesNumber(int instancesNumber) {
         instancesField.sendKeys(String.valueOf(instancesNumber));
         return this;
     }
 
     public
-    CalculatorPage fillOutInstanceForField(String string) {
+    CalculatorPage enterInstanceFor(String string) {
         instanceForField.sendKeys(string);
         return this;
     }

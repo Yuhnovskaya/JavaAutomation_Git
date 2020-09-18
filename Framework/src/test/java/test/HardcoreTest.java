@@ -10,7 +10,6 @@ import page.CalculatorPage;
 import page.GoogleCloudPage;
 import page.TenMinuteMailPage;
 import service.ProductCreator;
-import service.TestData;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -30,8 +29,8 @@ class HardcoreTest extends CommonConditions {
         googleCloudPage.findInGoogleCloud(googleCloudPage.getSEARCH_TEXT());
         calculatorPage.swithToWorkingFrame();
         calculatorPage.selectProduct(testProduct.getProductType());
-        calculatorPage.fillOutInstancesNumber(Integer.parseInt(testProduct.getInstanceNumber()));
-        calculatorPage.fillOutInstanceForField(testProduct.getInstanceFor());
+        calculatorPage.enterInstancesNumber(Integer.parseInt(testProduct.getInstanceNumber()));
+        calculatorPage.enterInstanceFor(testProduct.getInstanceFor());
         calculatorPage.selectOperationSystem(testProduct.getOperationSystem());
         calculatorPage.selectVMClass(testProduct.getVmClass());
         calculatorPage.selectInstanceType(testProduct.getInstanceType());
@@ -52,7 +51,7 @@ class HardcoreTest extends CommonConditions {
         String calculatorHandle = String.valueOf(handles.get(0));
         String mailHandle = String.valueOf(handles.get(1));
         driver.switchTo().window(mailHandle);
-        TimeUnit.SECONDS.sleep(10);
+        TimeUnit.SECONDS.sleep(5);
         //js.executeScript("arguments[0].click();", tenMinuteMailPage.copyEmail);
         tenMinuteMailPage.getEmailAddress();
         driver.switchTo().window(calculatorHandle);
@@ -60,7 +59,7 @@ class HardcoreTest extends CommonConditions {
         calculatorPage.pasteEmail();
         calculatorPage.sendEmail();
         driver.switchTo().window(mailHandle);
-        TimeUnit.SECONDS.sleep(30);
+        TimeUnit.SECONDS.sleep(40);
         /*WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.visibilityOf(tenMinuteMailPage.mail));*/
         tenMinuteMailPage.readEmail();
