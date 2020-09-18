@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 
 public
 class CalculatorPage extends AbstractPage {
-    //private final Logger logger = LogManager.getRootLogger();
     private final String PRODUCT = "//*[@class=\"md-paginated\"]//*[@title=\"%s\"]";
     private final String OPERATION_SYSTEM = "//*[@id=\"select_container_74\"]//*[contains(text(),\"%s\")]";
     private final String VM_CLASS = "//*[@id=\"select_container_78\"]//*[contains(text(),\"%s\")]";
