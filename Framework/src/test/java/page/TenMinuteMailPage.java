@@ -11,7 +11,7 @@ public
 class TenMinuteMailPage extends AbstractPage {
     private final Logger logger = LogManager.getRootLogger();
     private final String PAGE_URL = "https://10minutemail.com";
-    @FindBy(xpath = "/html/body/div[1]/div/section[1]/div/div[1]/div[1]")
+    @FindBy(xpath = "//*[@id=\"copy_address\"]")
     public WebElement copyEmail;
     @FindBy(xpath = "//*[@id=\"mail_messages_content\"]")
     public WebElement mail;
