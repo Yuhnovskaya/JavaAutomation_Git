@@ -1,6 +1,7 @@
 package driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -26,7 +27,7 @@ class DriverSingleton {
                     driver = new ChromeDriver();
                 }
             }
-            driver.manage().window().maximize();
+            driver.manage().window().setSize(new Dimension(1280,900));
         }
         return driver;
     }

@@ -132,7 +132,7 @@ class CalculatorPage extends AbstractPage {
     public
     CalculatorPage selectLocation(String location) throws InterruptedException {
         locationField.click();
-        TimeUnit.MILLISECONDS.sleep(100);
+        TimeUnit.MILLISECONDS.sleep(300);
         driver.findElement(By.xpath(String.format(LOCATION, location))).click();
         return this;
     }
